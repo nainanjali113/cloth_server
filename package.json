@@ -1,0 +1,34 @@
+{
+  "name": "cloth_server",
+  "version": "1.0.0",
+  "description": "this is my first project",
+  "homepage": "https://github.com/nainanjali113/cloth_server#readme",
+  "bugs": {
+    "url": "https://github.com/nainanjali113/cloth_server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nainanjali113/cloth_server.git"
+  },
+  "license": "ISC",
+  "author": "Anjani",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon src/index.js",
+    "dev": "npx nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.3",
+    "nodemon": "^3.1.14"
+  }
+}

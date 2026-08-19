@@ -5,7 +5,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 
-import { router } from './routes/routes.js'
+import router from './routes/routes.js'
 
 dotenv.config({ quiet: true })
 
@@ -36,6 +36,6 @@ app.use(limiter)
 
 app.use('/', router)
 
-app.listen(PORT, () => { console.log(` Server is running on port ${PORT}`) })
+app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`) })
 
 

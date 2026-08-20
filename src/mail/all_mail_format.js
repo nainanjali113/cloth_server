@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
     },
-});
+})
 
 export const sendOTPEmail = async (email, name, otp) => {
     try {
@@ -30,13 +30,10 @@ export const sendOTPEmail = async (email, name, otp) => {
                     <p>This OTP is valid for 10 minutes.</p>
                     <p>If you didn't request this, please ignore this email.</p>
                     <p style="margin-top: 30px; color: #666; font-size: 12px;">© ${new Date().getFullYear()} E-Shop. All rights reserved.</p>
-                </div>
-            `
-        });
+                </div> ` })
 
-        console.log("OTP email sent: %s", info.messageId);
-        return { success: true, messageId: info.messageId };
-    } 
+        console.log("OTP email sent: %s", info.messageId)
+        return { success: true, messageId: info.messageId } } 
     catch (err) { console.error('Error sending OTP email:', err)
         throw new Error('Failed to send OTP email') }
 }
@@ -57,13 +54,13 @@ export const sendPasswordResetEmail = async (email, name, otp) => {
                     <p>This OTP is valid for 10 minutes.</p>
                     <p>If you didn't request this, please ignore this email or contact support.</p>
                     <p style="margin-top: 30px; color: #666; font-size: 12px;">© ${new Date().getFullYear()} E-Shop. All rights reserved.</p>
-                </div>
-            `
-        })
+                </div> ` })
 
         console.log("Password reset email sent: %s", info.messageId)
-        return { success: true, messageId: info.messageId }
-     } 
+        return { success: true, messageId: info.messageId } } 
     catch (err) { console.error('Error sending password reset email:', err)
         throw new Error('Failed to send password reset email') }
-};
+}
+
+
+

@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-    profileImg: {  type: Object, default: null },
+    profileImg: { type: Object, default: null },
     first_name: { type: String, required: true, trim: true },
-    last_name: {  type: String, required: true, trim: true },
+    last_name: { type: String, required: true, trim: true },
     gender: { type: String, enum: ['male', 'female', 'other'], required: true },
     role: { type: String, enum: ['user', 'admin'], default: 'user', required: true },
     email: { type: String, required: true, unique: true, lowercase: true, trim: true },
@@ -31,11 +31,11 @@ const userSchema = new mongoose.Schema({
         lock_count: { type: Number, default: 0 },
         last_otp_sent: { type: Date }
     },
-    order_list: [{  type: mongoose.Schema.Types.ObjectId, ref: 'Order' }],
-    cart_list: [{  type: mongoose.Schema.Types.ObjectId, ref: 'Cart' }],
+    order_list: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }],
+    cart_list: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cart' }],
     last_login: { type: Date }
 }, {
     timestamps: true
-});
+})
 
 export default mongoose.model('User', userSchema);
